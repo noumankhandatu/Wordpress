@@ -149,6 +149,11 @@ body {
   color: #ffde59;
   font-size: 20px;
 }
+.icon {
+  color: #ffde59;
+  font-size: 20px;
+  padding-right: 10px;
+}
 .fa-shopping-cart {
   color: white;
 }

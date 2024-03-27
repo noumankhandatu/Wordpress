@@ -13,7 +13,7 @@
   <body>
     <header>
       <!-- Image in top left -->
-      <img src="/assets/house.jpg" alt="Logo" />
+      <img id="imageUrl"  alt="Logo" />
     </header>
     <div>
       <div style="height: 100px"></div>
@@ -67,10 +67,10 @@
         <div class="logo col-6">
           <img src="/assets/logo.png" alt="" style="width: 50%" />
           <h1 style="color: white; font-size: 52px">Livin</h1>
-          <h1 style="color: #ffde59; font-size: 52px">St Barth</h1>
+          <h1 style="color: #ffde59; font-size: 52px">St Barth  <br> $ <span id="price"></span> </h1>
           <div class="containers">
             <div class="btn">
-              <a href="#">Buy Now <i style="margin-left: 10px" class="fas fa-shopping-cart"></i></a>
+              <a id="buyNow" href="#">Buy Now <i style="margin-left: 10px" class="fas fa-shopping-cart"></i></a>
             </div>
           </div>
         </div>
@@ -79,14 +79,13 @@
             <h2>HOME FEATURES:</h2>
             <ul>
               <li><i style="margin-right: 10px" class="fas fa-bed"></i> <span id="beds"></span> Bedrooms</li>
-              <li><i style="margin-right: 10px" class="fas fa-bath"></i> <span id="bath"></span> Bathrooms</li>
-              <li><i style="margin-right: 10px" class="fas fa-bath"></i> <span id="garage"></span> Parking</li>
-              <li> <i style="margin-right: 10px" class="fas fa-swimming-pool"></i> <span id="propertySize"></span> Area </li>
-              <li> <i style="margin-right: 10px" class="fas fa-swimming-pool"></i> <span id="lotSize"></span> Lot Size </li>
-              <li> <i style="margin-right: 10px" class="fas fa-swimming-pool"></i> <span id="yearBuilt"></span> Year Built</li>
+              <li><i style="margin-right: 10px" class="fas fa-bath"></i> <span id="baths"></span> Bathrooms</li>
+              <li><i class="icon fa-solid fa-warehouse"></i> <span id="garage"></span> Parking</li>
+              <li><i class="icon fa-regular fa-square"></i> <span id="propertySize"></span> Area </li>
+              <li><i class="icon fa-solid fa-up-right-and-down-left-from-center"></i>  <span id="lotSize"></span> Lot Size </li>
+              <li><i class="icon fa-solid fa-calendar-days"></i> <span id="yearBuilt"></span> Year Built</li>
             </ul>
-            <a id="propertyUrl" style="color: white" href="http://www.reallygreatsite.com"
-              ></a
+            <a id="propertyUrl" style="color: white" href=""></a
             >
           </div>
         </div>
@@ -114,7 +113,7 @@
       var price = getParameterByName('price');
       var imageUrl = getParameterByName('imageUrl');
       var propertyUrl = getParameterByName('propertyUrl');
-      
+      console.log(imageUrl)
       // Update HTML elements with URL parameters
       document.getElementById('beds').textContent = beds;
       document.getElementById('baths').textContent = baths;
@@ -123,9 +122,12 @@
       document.getElementById('yearBuilt').textContent = yearBuilt;
       document.getElementById('garage').textContent = garage;
       document.getElementById('price').textContent = price;
+      document.getElementById('buyNow').href = propertyUrl;
       document.getElementById('imageUrl').src = imageUrl;
-      document.getElementById('propertyUrl').href = imageUrl;
-      document.getElementById('propertyUrl').textContent = imageUrl;
+      const anchorTag = document.getElementById('propertyUrl');
+
+     anchorTag.href = propertyUrl;
+     anchorTag.textContent  = propertyUrl;
       </script>
   </body>
 </html>
